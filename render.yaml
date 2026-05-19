@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: interact-server
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        value: https://your-client.vercel.app
+      - key: GOOGLE_GENERATIVE_AI_API_KEY
+        sync: false
+      - key: VAPI_API_KEY
+        sync: false
+      - key: VAPI_ASSISTANT_ID
+        sync: false
+      - key: VAPI_INTERVIEW_ASSISTANT_ID
+        sync: false
+      - key: VAPI_TECH_HELPER_ASSISTANT_ID
+        sync: false
+      - key: VAPI_GD_ASSISTANT_ID
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: EMAIL_FROM
+        value: noreply@interactai.com
+      - key: PISTON_API_URL
+        value: https://emkc.org/api/v2
+      - key: VIDEOSDK_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
